@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Master Study Plan</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="study-plan">
+    <div class="page-shell">
+      <nav class="page-nav" aria-label="Tracker pages">
+        <a class="page-nav__link" href="./index.html">Courses</a>
+        <a class="page-nav__link page-nav__link--active" href="./study-plan.html">Study Plan</a>
+        <a class="page-nav__link" href="./past-papers.html">Past Papers</a>
+        <a class="page-nav__link" href="./completed.html">Completed</a>
+      </nav>
+
+      <div class="storage-banner storage-banner--loading" id="storage-banner" aria-live="polite" role="status"></div>
+
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Exact Question Order</p>
+          <h1>Open the file, do the question, log the mistake.</h1>
+          <p class="hero-text">
+            This page keeps the mixed rescue order across Quantum, Condensed,
+            Nano, and GR/Cosmology, but each block now points to a specific file
+            and question instead of a vague topic heading.
+          </p>
+          <div class="hero-course-list" id="hero-course-list"></div>
+          <div class="plan-queue" id="plan-queue"></div>
+        </div>
+
+        <section class="overview-card" aria-labelledby="overview-title">
+          <p class="overview-label" id="today-label">Master Plan</p>
+          <p class="today-date" id="today-date"></p>
+          <div class="overall-progress">
+            <div class="overall-progress__meta">
+              <h2 id="overview-title">Master Study Plan</h2>
+              <span id="overall-percent"></span>
+            </div>
+            <div class="progress-track progress-track--large" aria-hidden="true">
+              <div class="progress-fill" id="overall-progress-fill"></div>
+            </div>
+            <p class="overview-footnote" id="overall-summary"></p>
+          </div>
+        </section>
+      </header>
+
+      <main class="dashboard">
+        <section class="spotlight-panel timeline-panel" aria-labelledby="strict-timeline-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="strict-timeline-title">Strict Timeline + Rolling Queue</h2>
+              <p>
+                Follow today first. Missed work rolls forward, good days can pull
+                the next task in, and tired days protect the minimum viable plan.
+              </p>
+            </div>
+          </div>
+          <div id="timeline-root"></div>
+        </section>
+
+        <section class="spotlight-panel" aria-labelledby="study-plan-metrics-title">
+          <div class="panel-heading">
+            <h2 id="study-plan-metrics-title">Study Plan Metrics</h2>
+            <p>
+              Track progress by deadline, see how much of the critical work is
+              done, and catch any overdue rescue blocks early.
+            </p>
+          </div>
+          <div class="plan-summary-grid">
+            <div>
+              <h3 class="plan-summary-grid__title">Completion by deadline</h3>
+              <div class="deadline-list" id="plan-deadline-summary"></div>
+            </div>
+            <div>
+              <h3 class="plan-summary-grid__title">Critical focus</h3>
+              <div id="plan-critical-summary"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="courses-panel" aria-labelledby="master-plan-title">
+          <div class="panel-heading">
+            <h2 id="master-plan-title">Exact Ordered To-Do List</h2>
+            <p>
+              Work straight down this order. Each block shows the source file,
+              the exact question, what to do, and the skill it is meant to
+              train.
+            </p>
+          </div>
+          <div class="plan-phase-list" id="master-plan-phase-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./timeline-data.js"></script>
+    <script src="./study-plan-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

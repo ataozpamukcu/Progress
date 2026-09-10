@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Completed Work</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="completed">
+    <div class="page-shell">
+      <nav class="page-nav" aria-label="Tracker pages">
+        <a class="page-nav__link" href="./index.html">Courses</a>
+        <a class="page-nav__link" href="./study-plan.html">Study Plan</a>
+        <a class="page-nav__link" href="./past-papers.html">Past Papers</a>
+        <a class="page-nav__link page-nav__link--active" href="./completed.html">Completed</a>
+      </nav>
+
+      <div class="storage-banner storage-banner--loading" id="storage-banner" aria-live="polite" role="status"></div>
+
+      <header class="hero">
+        <div class="hero-copy">
+          <div class="hero-course-list" id="hero-course-list"></div>
+        </div>
+
+        <section class="overview-card" aria-labelledby="overview-title">
+          <p class="overview-label" id="today-label">Archive</p>
+          <p class="today-date" id="today-date"></p>
+          <div class="overall-progress">
+            <div class="overall-progress__meta">
+              <h2 id="overview-title">Completed</h2>
+              <span id="overall-percent"></span>
+            </div>
+            <div class="progress-track progress-track--large" aria-hidden="true">
+              <div class="progress-fill" id="overall-progress-fill"></div>
+            </div>
+            <p class="overview-footnote" id="overall-summary"></p>
+          </div>
+        </section>
+      </header>
+
+      <main class="dashboard">
+        <section class="spotlight-panel" aria-labelledby="completed-deadlines-title">
+          <div class="panel-heading">
+            <h2 id="completed-deadlines-title">Completed Deadlines</h2>
+            <p>Unchecked items will move straight back to the active tracker.</p>
+          </div>
+          <div class="deadline-list" id="completed-deadline-list"></div>
+        </section>
+
+        <section class="courses-panel" aria-labelledby="completed-items-title">
+          <div class="panel-heading">
+            <h2 id="completed-items-title">Completed Work</h2>
+            <p>Finished milestones and completed exams are archived here.</p>
+          </div>
+          <div class="courses-grid" id="completed-item-list"></div>
+        </section>
+
+        <section class="courses-panel" aria-labelledby="completed-study-plan-title">
+          <div class="panel-heading">
+            <h2 id="completed-study-plan-title">Completed Study Plan</h2>
+            <p>Finished ordered to-do blocks are kept here separately.</p>
+          </div>
+          <div class="plan-block-list" id="completed-study-plan-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./study-plan-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
